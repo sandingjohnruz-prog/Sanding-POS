@@ -51,5 +51,20 @@ namespace Sanding_Win_Form_POS
         {
 
         }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCheckout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
