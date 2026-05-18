@@ -42,6 +42,25 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rghtpnl = new System.Windows.Forms.Panel();
+            this.btnInv = new System.Windows.Forms.Button();
+            this.btnHistory = new System.Windows.Forms.Button();
+            this.btnCheckout = new System.Windows.Forms.Button();
+            this.txtChange = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtCash = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtGrandTtl = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.TXTvAT = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtTotalQTY = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAmount = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,25 +74,10 @@
             this.TxTQty = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtTotalQTY = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.TXTvAT = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtGrandTtl = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtCash = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtChange = new System.Windows.Forms.TextBox();
-            this.btnCheckout = new System.Windows.Forms.Button();
-            this.btnHistory = new System.Windows.Forms.Button();
-            this.btnInv = new System.Windows.Forms.Button();
+            this.btnSenior = new System.Windows.Forms.Button();
+            this.btnpwd = new System.Windows.Forms.Button();
+            this.btnStudent = new System.Windows.Forms.Button();
+            this.btnNoDisc = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.rghtpnl.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -111,6 +115,7 @@
             this.TxtItemCode.Name = "TxtItemCode";
             this.TxtItemCode.Size = new System.Drawing.Size(120, 20);
             this.TxtItemCode.TabIndex = 6;
+            this.TxtItemCode.TextChanged += new System.EventHandler(this.TxtItemCode_TextChanged);
             // 
             // label3
             // 
@@ -167,6 +172,7 @@
             this.btnSearch.TabIndex = 3;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // TxtSearch
             // 
@@ -197,6 +203,10 @@
             // rghtpnl
             // 
             this.rghtpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rghtpnl.Controls.Add(this.btnNoDisc);
+            this.rghtpnl.Controls.Add(this.btnStudent);
+            this.rghtpnl.Controls.Add(this.btnpwd);
+            this.rghtpnl.Controls.Add(this.btnSenior);
             this.rghtpnl.Controls.Add(this.btnInv);
             this.rghtpnl.Controls.Add(this.btnHistory);
             this.rghtpnl.Controls.Add(this.btnCheckout);
@@ -220,6 +230,177 @@
             this.rghtpnl.Name = "rghtpnl";
             this.rghtpnl.Size = new System.Drawing.Size(379, 640);
             this.rghtpnl.TabIndex = 1;
+            // 
+            // btnInv
+            // 
+            this.btnInv.Location = new System.Drawing.Point(200, 535);
+            this.btnInv.Name = "btnInv";
+            this.btnInv.Size = new System.Drawing.Size(160, 35);
+            this.btnInv.TabIndex = 18;
+            this.btnInv.Text = "View Inventory";
+            this.btnInv.UseVisualStyleBackColor = true;
+            this.btnInv.Click += new System.EventHandler(this.btnInv_Click);
+            // 
+            // btnHistory
+            // 
+            this.btnHistory.Location = new System.Drawing.Point(3, 535);
+            this.btnHistory.Name = "btnHistory";
+            this.btnHistory.Size = new System.Drawing.Size(160, 35);
+            this.btnHistory.TabIndex = 17;
+            this.btnHistory.Text = "View History";
+            this.btnHistory.UseVisualStyleBackColor = true;
+            // 
+            // btnCheckout
+            // 
+            this.btnCheckout.Location = new System.Drawing.Point(10, 479);
+            this.btnCheckout.Name = "btnCheckout";
+            this.btnCheckout.Size = new System.Drawing.Size(350, 50);
+            this.btnCheckout.TabIndex = 16;
+            this.btnCheckout.Text = "Checkout";
+            this.btnCheckout.UseVisualStyleBackColor = true;
+            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
+            // 
+            // txtChange
+            // 
+            this.txtChange.Location = new System.Drawing.Point(160, 303);
+            this.txtChange.Name = "txtChange";
+            this.txtChange.Size = new System.Drawing.Size(200, 20);
+            this.txtChange.TabIndex = 15;
+            this.txtChange.Text = "₱0.00";
+            this.txtChange.Click += new System.EventHandler(this.txtCash_TextChanged);
+            // 
+            // label14
+            // 
+            this.label14.Location = new System.Drawing.Point(10, 303);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(100, 20);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Change";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // txtCash
+            // 
+            this.txtCash.Location = new System.Drawing.Point(160, 277);
+            this.txtCash.Name = "txtCash";
+            this.txtCash.Size = new System.Drawing.Size(200, 20);
+            this.txtCash.TabIndex = 13;
+            this.txtCash.Text = "0";
+            this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.Location = new System.Drawing.Point(10, 277);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(100, 20);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Cash";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // txtGrandTtl
+            // 
+            this.txtGrandTtl.Location = new System.Drawing.Point(160, 251);
+            this.txtGrandTtl.Name = "txtGrandTtl";
+            this.txtGrandTtl.Size = new System.Drawing.Size(200, 20);
+            this.txtGrandTtl.TabIndex = 11;
+            this.txtGrandTtl.Text = "₱0.00";
+            // 
+            // label12
+            // 
+            this.label12.Location = new System.Drawing.Point(10, 251);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Grand Total";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // txtDiscount
+            // 
+            this.txtDiscount.Location = new System.Drawing.Point(160, 177);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.Size = new System.Drawing.Size(200, 20);
+            this.txtDiscount.TabIndex = 9;
+            this.txtDiscount.Text = "0";
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(7, 180);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 20);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Discount (%)";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // TXTvAT
+            // 
+            this.TXTvAT.Location = new System.Drawing.Point(160, 137);
+            this.TXTvAT.Name = "TXTvAT";
+            this.TXTvAT.Size = new System.Drawing.Size(200, 20);
+            this.TXTvAT.TabIndex = 7;
+            this.TXTvAT.Text = "₱0.00";
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(10, 140);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(100, 20);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "VAT (%12)";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // txtTotalQTY
+            // 
+            this.txtTotalQTY.Location = new System.Drawing.Point(160, 97);
+            this.txtTotalQTY.Name = "txtTotalQTY";
+            this.txtTotalQTY.Size = new System.Drawing.Size(200, 20);
+            this.txtTotalQTY.TabIndex = 5;
+            this.txtTotalQTY.Text = "0";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(10, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(100, 20);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Total QTY";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.Location = new System.Drawing.Point(160, 57);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(200, 20);
+            this.txtAmount.TabIndex = 3;
+            this.txtAmount.Text = "₱0.00";
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(10, 60);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 20);
+            this.label8.TabIndex = 2;
+            this.label8.Text = "Amount";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(10, 10);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(340, 30);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "PURCHASE DETAILS";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(820, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(380, 460);
+            this.panel4.TabIndex = 0;
             // 
             // panel3
             // 
@@ -336,170 +517,45 @@
             this.label5.Text = "Current Order";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel4
+            // btnSenior
             // 
-            this.panel4.Location = new System.Drawing.Point(820, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(380, 460);
-            this.panel4.TabIndex = 0;
+            this.btnSenior.Location = new System.Drawing.Point(13, 203);
+            this.btnSenior.Name = "btnSenior";
+            this.btnSenior.Size = new System.Drawing.Size(80, 25);
+            this.btnSenior.TabIndex = 19;
+            this.btnSenior.Text = "Senior 20%";
+            this.btnSenior.UseVisualStyleBackColor = true;
+            this.btnSenior.Click += new System.EventHandler(this.btnSenior_Click);
             // 
-            // label7
+            // btnpwd
             // 
-            this.label7.Location = new System.Drawing.Point(10, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(340, 30);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "PURCHASE DETAILS";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnpwd.Location = new System.Drawing.Point(99, 203);
+            this.btnpwd.Name = "btnpwd";
+            this.btnpwd.Size = new System.Drawing.Size(80, 25);
+            this.btnpwd.TabIndex = 20;
+            this.btnpwd.Text = "PWD 20%";
+            this.btnpwd.UseVisualStyleBackColor = true;
+            this.btnpwd.Click += new System.EventHandler(this.btnPWD_Click);
             // 
-            // label8
+            // btnStudent
             // 
-            this.label8.Location = new System.Drawing.Point(10, 60);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 20);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Amount";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnStudent.Location = new System.Drawing.Point(185, 203);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Size = new System.Drawing.Size(80, 25);
+            this.btnStudent.TabIndex = 21;
+            this.btnStudent.Text = "Student 20%";
+            this.btnStudent.UseVisualStyleBackColor = true;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
             // 
-            // txtAmount
+            // btnNoDisc
             // 
-            this.txtAmount.Location = new System.Drawing.Point(160, 57);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(200, 20);
-            this.txtAmount.TabIndex = 3;
-            this.txtAmount.Text = "₱0.00";
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(10, 100);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 20);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "Total QTY";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // txtTotalQTY
-            // 
-            this.txtTotalQTY.Location = new System.Drawing.Point(160, 97);
-            this.txtTotalQTY.Name = "txtTotalQTY";
-            this.txtTotalQTY.Size = new System.Drawing.Size(200, 20);
-            this.txtTotalQTY.TabIndex = 5;
-            this.txtTotalQTY.Text = "0";
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(10, 140);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(100, 20);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "VAT (%12)";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
-            // TXTvAT
-            // 
-            this.TXTvAT.Location = new System.Drawing.Point(160, 137);
-            this.TXTvAT.Name = "TXTvAT";
-            this.TXTvAT.Size = new System.Drawing.Size(200, 20);
-            this.TXTvAT.TabIndex = 7;
-            this.TXTvAT.Text = "₱0.00";
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(10, 180);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 20);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Discount (%)";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtDiscount
-            // 
-            this.txtDiscount.Location = new System.Drawing.Point(160, 177);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(200, 20);
-            this.txtDiscount.TabIndex = 9;
-            this.txtDiscount.Text = "0";
-            // 
-            // label12
-            // 
-            this.label12.Location = new System.Drawing.Point(10, 220);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(100, 20);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Grand Total";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtGrandTtl
-            // 
-            this.txtGrandTtl.Location = new System.Drawing.Point(160, 217);
-            this.txtGrandTtl.Name = "txtGrandTtl";
-            this.txtGrandTtl.Size = new System.Drawing.Size(200, 20);
-            this.txtGrandTtl.TabIndex = 11;
-            this.txtGrandTtl.Text = "₱0.00";
-            // 
-            // label13
-            // 
-            this.label13.Location = new System.Drawing.Point(10, 280);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(100, 20);
-            this.label13.TabIndex = 12;
-            this.label13.Text = "Cash";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtCash
-            // 
-            this.txtCash.Location = new System.Drawing.Point(160, 277);
-            this.txtCash.Name = "txtCash";
-            this.txtCash.Size = new System.Drawing.Size(200, 20);
-            this.txtCash.TabIndex = 13;
-            this.txtCash.Text = "0";
-            // 
-            // label14
-            // 
-            this.label14.Location = new System.Drawing.Point(10, 320);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(100, 20);
-            this.label14.TabIndex = 14;
-            this.label14.Text = "Change";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // txtChange
-            // 
-            this.txtChange.Location = new System.Drawing.Point(160, 317);
-            this.txtChange.Name = "txtChange";
-            this.txtChange.Size = new System.Drawing.Size(200, 20);
-            this.txtChange.TabIndex = 15;
-            this.txtChange.Text = "₱0.00";
-            // 
-            // btnCheckout
-            // 
-            this.btnCheckout.Location = new System.Drawing.Point(13, 379);
-            this.btnCheckout.Name = "btnCheckout";
-            this.btnCheckout.Size = new System.Drawing.Size(350, 50);
-            this.btnCheckout.TabIndex = 16;
-            this.btnCheckout.Text = "Checkout";
-            this.btnCheckout.UseVisualStyleBackColor = true;
-            this.btnCheckout.Click += new System.EventHandler(this.btnCheckout_Click);
-            // 
-            // btnHistory
-            // 
-            this.btnHistory.Location = new System.Drawing.Point(10, 450);
-            this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(160, 35);
-            this.btnHistory.TabIndex = 17;
-            this.btnHistory.Text = "View History";
-            this.btnHistory.UseVisualStyleBackColor = true;
-            // 
-            // btnInv
-            // 
-            this.btnInv.Location = new System.Drawing.Point(185, 450);
-            this.btnInv.Name = "btnInv";
-            this.btnInv.Size = new System.Drawing.Size(160, 35);
-            this.btnInv.TabIndex = 18;
-            this.btnInv.Text = "View Inventory";
-            this.btnInv.UseVisualStyleBackColor = true;
+            this.btnNoDisc.Location = new System.Drawing.Point(271, 203);
+            this.btnNoDisc.Name = "btnNoDisc";
+            this.btnNoDisc.Size = new System.Drawing.Size(90, 25);
+            this.btnNoDisc.TabIndex = 22;
+            this.btnNoDisc.Text = "No Discount";
+            this.btnNoDisc.UseVisualStyleBackColor = true;
+            this.btnNoDisc.Click += new System.EventHandler(this.btnNoDisc_Click);
             // 
             // Form1
             // 
@@ -570,6 +626,10 @@
         private System.Windows.Forms.Button btnCheckout;
         private System.Windows.Forms.TextBox txtChange;
         private System.Windows.Forms.Button btnInv;
+        private System.Windows.Forms.Button btnStudent;
+        private System.Windows.Forms.Button btnpwd;
+        private System.Windows.Forms.Button btnSenior;
+        private System.Windows.Forms.Button btnNoDisc;
     }
 }
 
