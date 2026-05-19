@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnQuickAdd = new System.Windows.Forms.Button();
+            this.txtQuickQty = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TxtItemCode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +44,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.rghtpnl = new System.Windows.Forms.Panel();
+            this.btnNoDisc = new System.Windows.Forms.Button();
+            this.btnStudent = new System.Windows.Forms.Button();
+            this.btnpwd = new System.Windows.Forms.Button();
+            this.btnSenior = new System.Windows.Forms.Button();
             this.btnInv = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnCheckout = new System.Windows.Forms.Button();
@@ -74,10 +80,7 @@
             this.TxTQty = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSenior = new System.Windows.Forms.Button();
-            this.btnpwd = new System.Windows.Forms.Button();
-            this.btnStudent = new System.Windows.Forms.Button();
-            this.btnNoDisc = new System.Windows.Forms.Button();
+            this.btnSwitch = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.rghtpnl.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -86,6 +89,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnQuickAdd);
+            this.panel1.Controls.Add(this.txtQuickQty);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.TxtItemCode);
             this.panel1.Controls.Add(this.label3);
@@ -100,14 +105,33 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // btnQuickAdd
+            // 
+            this.btnQuickAdd.Location = new System.Drawing.Point(287, 579);
+            this.btnQuickAdd.Name = "btnQuickAdd";
+            this.btnQuickAdd.Size = new System.Drawing.Size(80, 25);
+            this.btnQuickAdd.TabIndex = 9;
+            this.btnQuickAdd.Text = "Quick Add";
+            this.btnQuickAdd.UseVisualStyleBackColor = true;
+            this.btnQuickAdd.Click += new System.EventHandler(this.btnQuickAdd_Click);
+            // 
+            // txtQuickQty
+            // 
+            this.txtQuickQty.Location = new System.Drawing.Point(231, 581);
+            this.txtQuickQty.Name = "txtQuickQty";
+            this.txtQuickQty.Size = new System.Drawing.Size(50, 20);
+            this.txtQuickQty.TabIndex = 8;
+            this.txtQuickQty.Text = "1";
+            this.txtQuickQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtItemCode_KeyPress);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(200, 585);
+            this.label4.Location = new System.Drawing.Point(195, 585);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Price(PHP)";
+            this.label4.Text = "QTY";
             // 
             // TxtItemCode
             // 
@@ -183,11 +207,12 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(10, 55);
+            this.label2.Location = new System.Drawing.Point(3, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(63, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Search";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
@@ -203,6 +228,7 @@
             // rghtpnl
             // 
             this.rghtpnl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rghtpnl.Controls.Add(this.btnSwitch);
             this.rghtpnl.Controls.Add(this.btnNoDisc);
             this.rghtpnl.Controls.Add(this.btnStudent);
             this.rghtpnl.Controls.Add(this.btnpwd);
@@ -231,6 +257,46 @@
             this.rghtpnl.Size = new System.Drawing.Size(379, 640);
             this.rghtpnl.TabIndex = 1;
             // 
+            // btnNoDisc
+            // 
+            this.btnNoDisc.Location = new System.Drawing.Point(271, 203);
+            this.btnNoDisc.Name = "btnNoDisc";
+            this.btnNoDisc.Size = new System.Drawing.Size(90, 25);
+            this.btnNoDisc.TabIndex = 22;
+            this.btnNoDisc.Text = "No Discount";
+            this.btnNoDisc.UseVisualStyleBackColor = true;
+            this.btnNoDisc.Click += new System.EventHandler(this.btnNoDisc_Click);
+            // 
+            // btnStudent
+            // 
+            this.btnStudent.Location = new System.Drawing.Point(185, 203);
+            this.btnStudent.Name = "btnStudent";
+            this.btnStudent.Size = new System.Drawing.Size(80, 25);
+            this.btnStudent.TabIndex = 21;
+            this.btnStudent.Text = "Student 5%";
+            this.btnStudent.UseVisualStyleBackColor = true;
+            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
+            // 
+            // btnpwd
+            // 
+            this.btnpwd.Location = new System.Drawing.Point(99, 203);
+            this.btnpwd.Name = "btnpwd";
+            this.btnpwd.Size = new System.Drawing.Size(80, 25);
+            this.btnpwd.TabIndex = 20;
+            this.btnpwd.Text = "PWD 20%";
+            this.btnpwd.UseVisualStyleBackColor = true;
+            this.btnpwd.Click += new System.EventHandler(this.btnPWD_Click);
+            // 
+            // btnSenior
+            // 
+            this.btnSenior.Location = new System.Drawing.Point(13, 203);
+            this.btnSenior.Name = "btnSenior";
+            this.btnSenior.Size = new System.Drawing.Size(80, 25);
+            this.btnSenior.TabIndex = 19;
+            this.btnSenior.Text = "Senior 30%";
+            this.btnSenior.UseVisualStyleBackColor = true;
+            this.btnSenior.Click += new System.EventHandler(this.btnSenior_Click);
+            // 
             // btnInv
             // 
             this.btnInv.Location = new System.Drawing.Point(200, 535);
@@ -243,12 +309,13 @@
             // 
             // btnHistory
             // 
-            this.btnHistory.Location = new System.Drawing.Point(3, 535);
+            this.btnHistory.Location = new System.Drawing.Point(13, 535);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(160, 35);
             this.btnHistory.TabIndex = 17;
             this.btnHistory.Text = "View History";
             this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnCheckout
             // 
@@ -471,6 +538,7 @@
             this.btnClrAll.TabIndex = 5;
             this.btnClrAll.Text = "CLEAR";
             this.btnClrAll.UseVisualStyleBackColor = true;
+            this.btnClrAll.Click += new System.EventHandler(this.btnClrAll_Click);
             // 
             // BtnRmvOrder
             // 
@@ -514,48 +582,19 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(380, 30);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Current Order";
+            this.label5.Text = "CURRENT ORDER";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // btnSenior
+            // btnSwitch
             // 
-            this.btnSenior.Location = new System.Drawing.Point(13, 203);
-            this.btnSenior.Name = "btnSenior";
-            this.btnSenior.Size = new System.Drawing.Size(80, 25);
-            this.btnSenior.TabIndex = 19;
-            this.btnSenior.Text = "Senior 20%";
-            this.btnSenior.UseVisualStyleBackColor = true;
-            this.btnSenior.Click += new System.EventHandler(this.btnSenior_Click);
-            // 
-            // btnpwd
-            // 
-            this.btnpwd.Location = new System.Drawing.Point(99, 203);
-            this.btnpwd.Name = "btnpwd";
-            this.btnpwd.Size = new System.Drawing.Size(80, 25);
-            this.btnpwd.TabIndex = 20;
-            this.btnpwd.Text = "PWD 20%";
-            this.btnpwd.UseVisualStyleBackColor = true;
-            this.btnpwd.Click += new System.EventHandler(this.btnPWD_Click);
-            // 
-            // btnStudent
-            // 
-            this.btnStudent.Location = new System.Drawing.Point(185, 203);
-            this.btnStudent.Name = "btnStudent";
-            this.btnStudent.Size = new System.Drawing.Size(80, 25);
-            this.btnStudent.TabIndex = 21;
-            this.btnStudent.Text = "Student 20%";
-            this.btnStudent.UseVisualStyleBackColor = true;
-            this.btnStudent.Click += new System.EventHandler(this.btnStudent_Click);
-            // 
-            // btnNoDisc
-            // 
-            this.btnNoDisc.Location = new System.Drawing.Point(271, 203);
-            this.btnNoDisc.Name = "btnNoDisc";
-            this.btnNoDisc.Size = new System.Drawing.Size(90, 25);
-            this.btnNoDisc.TabIndex = 22;
-            this.btnNoDisc.Text = "No Discount";
-            this.btnNoDisc.UseVisualStyleBackColor = true;
-            this.btnNoDisc.Click += new System.EventHandler(this.btnNoDisc_Click);
+            this.btnSwitch.Location = new System.Drawing.Point(289, 612);
+            this.btnSwitch.Name = "btnSwitch";
+            this.btnSwitch.Size = new System.Drawing.Size(80, 25);
+            this.btnSwitch.TabIndex = 23;
+            this.btnSwitch.Text = "Switch User";
+            this.btnSwitch.UseVisualStyleBackColor = true;
+            this.btnSwitch.Click += new System.EventHandler(this.btnSwitch_Click);
             // 
             // Form1
             // 
@@ -589,7 +628,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ListView Catalog;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox TxtItemCode;
         private System.Windows.Forms.ColumnHeader Code;
         private System.Windows.Forms.ColumnHeader ItemName;
@@ -630,6 +668,10 @@
         private System.Windows.Forms.Button btnpwd;
         private System.Windows.Forms.Button btnSenior;
         private System.Windows.Forms.Button btnNoDisc;
+        private System.Windows.Forms.Button btnQuickAdd;
+        private System.Windows.Forms.TextBox txtQuickQty;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSwitch;
     }
 }
 

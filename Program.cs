@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Sanding_Win_Form_POS
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Cashier_Login login = new Cashier_Login();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Form1 mainForm = new Form1(login.CashierName, login.CashierID);
+                Application.Run(mainForm);
+            }
         }
     }
 }
